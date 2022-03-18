@@ -1,8 +1,18 @@
 # Scala
 
+
+
+Notes-:
+Repl -: Recent evaluation print loop
+val is immutable
+var is mutable
+for help use 
+>> :help
+>> ctrl + d #to exit
+
 ```
 >>  sbt
->>  sbt console
+>>  sbt console or start scala
 
 
 scala> def max(x: Int,y: Int): Int=if (x>y) x else y
@@ -11,7 +21,7 @@ max: (x: Int, y: Int)Int
 scala> max(5,7)
 res2: Int = 7
 
-scala> def say(name: String): Unit=println(s"Hello $name")
+scala> def say(name: String)=println(s"Hello $name")
 say: (name: String)Unit
 
 scala> say("Priyanshu")
