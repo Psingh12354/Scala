@@ -7,8 +7,8 @@ Repl -: Recent evaluation print loop
 val is immutable
 var is mutable
 for help use 
->> :help
->> ctrl + d #to exit
+:help
+ctrl + d #to exit
 
 ```
 >>  sbt
