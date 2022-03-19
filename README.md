@@ -600,3 +600,56 @@ scala> try{
      | } catch{ case ex: IllegalArgumentException=>0}
 val res1: AnyVal = 0
 ```
+### For
+```
+scala> for (i<-1 to 10) println(i*i)
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+scala> (1 to 10).foreach(i=> println(i*i))
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+scala> for {
+     | i<-1 to 3
+     | j<-1 to 3
+     | }{ println(i*j)}
+1
+2
+3
+2
+4
+6
+3
+6
+9
+
+scala> for (i<-1 to 10) yield i*i
+val res2: IndexedSeq[Int] = Vector(1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+
+scala> (1 to 3).flatMap(i=>(1 to 3).map(j=>i*3))
+val res3: IndexedSeq[Int] = Vector(3, 3, 3, 6, 6, 6, 9, 9, 9)
+
+scala> for {
+     | v1<- 1 to 3
+     | v2<- 4 to 6
+     | v3<- 7 to 9
+     | } yield v1+v2+v3
+val res4: IndexedSeq[Int] = Vector(12, 13, 14, 13, 14, 15, 14, 15, 16, 13, 14, 15, 14, 15, 16, 15, 16, 17, 14, 15, 16, 15, 16, 17, 16, 17, 18)
+```
