@@ -683,3 +683,6 @@ scala> n match{
      | }
 val res5: String = negative
 ```
+### String interpotation
+![img](https://user-images.githubusercontent.com/55645997/159112220-86d9c2c6-266e-488b-b135-6e44745d5eae.jpeg)
+
