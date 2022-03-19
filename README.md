@@ -546,3 +546,24 @@ scala> for(line<-Source.fromFile("file.txt").getLines()){
      | }
 Unity in Diversity means unity among people who has certain differences. These differences may be related to there place of leaving, their culture, their religion, and their class. If you are leaving in India you can see different cultures are leaving in a different part of the country with language change is common someplace it changes after every 50km, It may be a small change or large change. In some cultures, people take the bear and some not but they are leaving and working together for their professional point of view. The best thing about unity in diversity is that we are learning something new like there food, If north Indian leaves with south Indian guy then there definitely share there food like the south have dosa and the north one have samosa and so on.
 ```
+### Class
+```
+scala> class A{
+     | val x=10
+     | val y=x*2
+     | def timesY(a:Int):Int=a*y
+     | }
+defined class A
+
+scala> val A=new A
+A: A = A@a6bdb57
+
+scala> A.x
+res0: Int = 10
+
+scala> A.y
+res1: Int = 20
+
+scala> A.timesY(4)
+res2: Int = 80
+```
