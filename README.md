@@ -592,3 +592,11 @@ scala> ex1.close()
 scala>  if(a>b){println(a)}else{println(b)}
 10
 ```
+### Try-catch
+```
+scala> try{
+     | require(a,"A should be true")
+     | a
+     | } catch{ case ex: IllegalArgumentException=>0}
+val res1: AnyVal = 0
+```
