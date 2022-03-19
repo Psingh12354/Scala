@@ -567,3 +567,23 @@ res1: Int = 20
 scala> A.timesY(4)
 res2: Int = 80
 ```
+
+### FileWrite
+```
+scala> import java.io._
+
+scala> class WriteOutput(writer: PrintWriter){
+     | def write(s:String): Unit=writer.println(s)
+     | }
+// defined class WriteOutput
+scala> val out1=new WriteOutput(ex1)
+val out1: WriteOutput = WriteOutput@7574d4ad
+
+scala> out1.write("Hello")
+
+scala> out1.write("to")
+
+scala> out1.write("you")
+
+scala> ex1.close()
+```
