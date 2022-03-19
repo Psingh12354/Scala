@@ -587,3 +587,8 @@ scala> out1.write("you")
 
 scala> ex1.close()
 ```
+### if-else(no ternary)
+```
+scala>  if(a>b){println(a)}else{println(b)}
+10
+```
