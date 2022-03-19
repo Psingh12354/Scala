@@ -653,3 +653,33 @@ scala> for {
      | } yield v1+v2+v3
 val res4: IndexedSeq[Int] = Vector(12, 13, 14, 13, 14, 15, 14, 15, 16, 13, 14, 15, 14, 15, 16, 15, 16, 17, 14, 15, 16, 15, 16, 17, 16, 17, 18)
 ```
+
+### Mathc- Case Similar to Switch Case
+```
+
+scala> val x=1
+val x: Int = 1
+
+scala> x match{
+     | case 1=> println("One")
+     | case 2=> println("Two")
+     | case 3=> println("Three")
+     | case _=>  println("Something else")
+     | }
+One
+
+scala> val res=x match{
+     | case 1=> "one"
+     | case 2=> "two"
+     | case _=> "Something else"
+     | }
+val res: String = one
+
+scala> val n = -1
+scala> n match{
+     | case 0=> "Zero"
+     | case v if v>0 => "positive"
+     | case v => "negative"
+     | }
+val res5: String = negative
+```
