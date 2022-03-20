@@ -705,4 +705,11 @@ val res3: (List[Int], List[Int]) = (List(1, 2, 3, 5, 6, 7, 9, 10),List(4, 8))
 
 scala> nums.partition(x=>x%4!=0)(1)
 val res4: List[Int] = List(4, 8)
+
+scala> val res=nums.reduce((x,y)=>x max y)
+val res: Int = 10
+
+scala> nums.reduce((x:Int,y:Int)=>x+y)
+val res5: Int = 55
+
 ```
