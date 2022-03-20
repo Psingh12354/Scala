@@ -686,3 +686,23 @@ val res5: String = negative
 ### String interpotation
 ![img](https://user-images.githubusercontent.com/55645997/159112220-86d9c2c6-266e-488b-b135-6e44745d5eae.jpeg)
 
+### Higher Order Function
+```
+scala> val nums=(1 to 10).toList
+val nums: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+scala> nums.map(x=>x*x)
+val res0: List[Int] = List(1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+
+scala> nums.filter(x=>x%2==0)
+val res1: List[Int] = List(2, 4, 6, 8, 10)
+
+scala> nums.span(x=>x%4!=0)
+val res2: (List[Int], List[Int]) = (List(1, 2, 3),List(4, 5, 6, 7, 8, 9, 10))
+
+scala> nums.partition(x=>x%4!=0)
+val res3: (List[Int], List[Int]) = (List(1, 2, 3, 5, 6, 7, 9, 10),List(4, 8))
+
+scala> nums.partition(x=>x%4!=0)(1)
+val res4: List[Int] = List(4, 8)
+```
