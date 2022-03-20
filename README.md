@@ -713,3 +713,18 @@ scala> nums.reduce((x:Int,y:Int)=>x+y)
 val res5: Int = 55
 
 ```
+
+### Partial app
+```
+scala> val num3=(a: Int,b: Int,c: Int)=>a+b+c
+val num3: (Int, Int, Int) => Int = Lambda$1611/2101881246@17810908
+
+scala> val add=num3(6,(_:Int),3)
+val add: Int => Int = Lambda$1623/1218021867@6d97a357
+
+scala> add
+val res6: Int => Int = Lambda$1623/1218021867@6d97a357
+
+scala> add(2)
+val res7: Int = 11
+```
