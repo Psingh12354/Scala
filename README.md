@@ -728,3 +728,198 @@ val res6: Int => Int = Lambda$1623/1218021867@6d97a357
 scala> add(2)
 val res7: Int = 11
 ```
+
+
+
+
+### Rough
+
+```
+   // VALUES are immutable constants.
+   val hello: String = "Hola!"
+
+   // VARIABLES are mutable
+   var helloThere: String = hello
+   helloThere = hello + " There!"
+   println(helloThere)
+
+   val immutableHelloThere = hello + " There"
+   println(immutableHelloThere)
+
+   // Data Types
+
+   val numberOne: Int = 1
+   val truth: Boolean = true
+   val letterA: Char = 'a'
+   val pi: Double = 3.14159265
+   val piSinglePrecision: Float = 3.14159265f
+   val bigNumber: Long = 123456789
+   val smallNumber: Byte = 127
+
+   println("Here is a mess: " + numberOne + truth + letterA + pi + bigNumber)
+
+   println(f"Pi is about $piSinglePrecision%.3f")
+   println(f"Zero padding on the left: $numberOne%05d")
+
+   println(s"I can use the s prefix to use variables like $numberOne $truth $letterA")
+
+   println(s"The s prefix isn't limited to variables; I can include any expression. Like ${1+2}")
+
+   val theUltimateAnswer: String = "To life, the universe, and everything is 42."
+   val pattern = """.* ([\d]+).*""".r
+   val pattern(answerString) = theUltimateAnswer
+   val answer = answerString.toInt
+   println(answer)
+
+   // Booleans
+   val isGreater = 1 > 2
+   val isLesser = 1 < 2
+   val impossible = isGreater & isLesser
+   val anotherWay = isGreater || isLesser
+
+   val picard: String = "Picard"
+   val bestCaptain: String = "Picard"
+   val isBest: Boolean = picard == bestCaptain
+   
+   
+   
+   
+   // Flow control
+
+// If / else:
+if (1 > 3) println("Impossible!") else println("The world makes sense.")
+
+if (1 > 3) {
+  println("Impossible!")
+  println("Really?")
+} else {
+  println("The world makes sense.")
+  println("still.")
+}
+
+// Matching
+val number = 2
+number match {
+  case 1 => println("One")
+  case 2 => println("Two")
+  case 3 => println("Three")
+  case _ => println("Something else")
+}
+
+for (x <- 1 to 4) {
+  val squared = x * x
+  println(squared)
+}
+
+var x = 10
+while (x >= 0) {
+  println(x)
+  x -= 1
+}
+
+x = 0
+do { println(x); x+=1 } while (x <= 10)
+
+// Expressions
+
+{val x = 10; x + 20}
+
+println({val x = 10; x + 20})
+
+
+
+
+
+// Functions
+
+// format def <function name>(parameter name: type...) : return type = { }
+
+def squareIt(x: Int) : Int = {
+  x * x
+}
+
+def cubeIt(x : Int) : Int = {x * x * x}
+
+println(squareIt(2))
+
+println(cubeIt(3))
+
+def transformInt(x: Int, f: Int => Int): Int = {
+  f(x)
+}
+
+val result = transformInt(2, cubeIt)
+println(result)
+
+transformInt(3, x => x * x * x)
+
+transformInt(10, x => x / 2)
+
+transformInt(2, x => {val y = x * 2; y * y})
+
+
+
+// Data structures
+
+// Tuples
+// Immutable lists
+
+val captainStuff = ("Picard", "Enterprise-D", "NCC-1701-D")
+println(captainStuff)
+
+// Refer to the individual fields with a ONE-BASED index
+println(captainStuff._1)
+println(captainStuff._2)
+println(captainStuff._3)
+
+val picardsShip = "Picard" -> "Enterprise-D"
+println(picardsShip._2)
+
+val aBunchOfStuff = ("Kirk", 1964, true)
+
+// Lists
+// Like a tuple, but more functionality
+// Must be of same type
+
+val shipList = List("Enterprise", "Defiant", "Voyager", "Deep Space Nine")
+
+println(shipList(1))
+// zero-based
+
+println(shipList.head)
+println(shipList.tail)
+
+for (ship <- shipList) {println(ship)}
+
+val backwardShips = shipList.map( (ship: String) => {ship.reverse})
+for (ship <- backwardShips) {println(ship)}
+
+// reduce() to combine together all the items in a collection using some function
+val numberList = List(1, 2, 3, 4,5 )
+val sum = numberList.reduce( (x: Int, y: Int) => x + y)
+println(sum)
+
+// filter() removes stuff
+val iHateFives = numberList.filter( (x: Int) => x != 5)
+
+val iHateThrees = numberList.filter(_ != 3)
+
+// Concatenate lists
+val moreNumbers = List(6,7,8)
+val lotsOfNumbers = numberList ++ moreNumbers
+
+val reversed = numberList.reverse
+val sorted = reversed.sorted
+val lotsOfDuplicates = numberList ++ numberList
+val distinctValues = lotsOfDuplicates.distinct
+val maxValue = numberList.max
+val total = numberList.sum
+val hasThree = iHateThrees.contains(3)
+
+// MAPS
+val shipMap = Map("Kirk" -> "Enterprise", "Picard" -> "Enterprise-D", "Sisko" -> "Deep Space Nine", "Janeway" -> "Voyager")
+println(shipMap("Janeway"))
+println(shipMap.contains("Archer"))
+val archersShip = util.Try(shipMap("Archer")) getOrElse "Unknown"
+println(archersShip)
+```
